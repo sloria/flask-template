@@ -1,0 +1,3 @@
+### Databases adapter ###
+#psycopg2
+#MySQL-python
