@@ -32,17 +32,18 @@
 <div class="{% block content_class %}container{% endblock content_class %}">
 
   <div role="main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     <div class="row">
       <div class="span12">
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}}">
-          <strong>{{message.tags|title}}:</strong> {{message}}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          <a class="close" title="Close" href="#" data-dismiss="alert">&times;</a>
+         {{message}}
         </div>
         {% endfor %}
-      </div><!-- end span -->
-    </div><!-- end row -->
-    {% endif %}
+        {% endif %}
+    {% endwith %}
     
     {% block content %}{% endblock %}
   </div>
