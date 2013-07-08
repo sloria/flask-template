@@ -8,6 +8,5 @@ Fabric
 
 # Testing
 nose
-rednose
 webtest
 watchdog

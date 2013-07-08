@@ -1,8 +1,9 @@
 from unittest import TestCase
 from webtest import TestApp
 from nose.tools import *
+from flask import url_for
 
-from app import app
+from ..main import app
 
 class TestAUser(TestCase):
     def setUp(self):
@@ -13,5 +14,5 @@ class TestAUser(TestCase):
 
     def test_can_see_homepage(self):
         # Goes to homepage
-        res = self.app.get('/')
+        res = self.app.get('')
         assert_equal(res.status_code, 200)

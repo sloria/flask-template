@@ -1,11 +1,23 @@
 # Install everything that needs to be compiled
 -r compiled.txt
 
-Flask>=0.9
-Jinja2>=2.6
-Werkzeug>=0.8.3
-wsgiref>=0.1.2
+Flask>=0.10.1
+Jinja2>=2.7
+MarkupSafe>=0.18
+Werkzeug>=0.9.1
+itsdangerous>=0.22
+
+# Deployment
+gunicorn
 
 ### ORM ###
 # SQLAlchemy
-# peewee
+peewee
+flask-peewee
+
+# Forms
+wtforms
+wtf-peewee
+
+# CBV
+flask-classy

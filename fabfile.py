@@ -22,14 +22,14 @@ env.virtualenv = '/srv/www/PROJECTNAME/.virtualenv'
 env.code_repo = 'git@github.com:user/PROJECTNAME.git'
 
 # Python version
-PYTHON_BIN = "python2.7"
+PYTHON_BIN = "python"
 PYTHON_PREFIX = ""  # e.g. /usr/local  Use "" for automatic
 PYTHON_FULL_PATH = "%s/bin/%s" % (PYTHON_PREFIX, PYTHON_BIN) if PYTHON_PREFIX else PYTHON_BIN
 
 # Javascript directory
-JAVASCRIPT_DIR = os.path.join('static', 'js')
+JAVASCRIPT_DIR = os.path.join('project', 'static', 'js')
 # Coffeescript directory
-COFFEE_DIR = os.path.join('static', 'coffee')
+COFFEE_DIR = os.path.join('project', 'static', 'coffee')
 
 
 def virtualenv(venv_dir):
@@ -199,7 +199,7 @@ def watchmedo():
     """
     Watches the file system for changes of ``*.py`` files and executes the tests
     whenever you save a file.
-    """ 
+    """
     cmd = 'watchmedo shell-command --recursive --ignore-directories --patterns="*.py" --wait --command="fab test:unit=1,webtest=1" .'
     local(cmd)
 
